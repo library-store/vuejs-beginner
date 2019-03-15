@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" msg2="Message 2" />
+    <HomeComponent></HomeComponent>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HomeComponent from './layouts/HomeComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    HomeComponent
+  },
+  data: function(){
+    return {
+      demo: 'Demo text',
+    }
+  },
+  methods: {
+    demo1(){
+      console.log(11111111111);
+    },
+  },
+  computed: {
+    reversedMessage: function(){
+      return this.message.split('').reverse().join(' ');
+    }
+  },
 }
 </script>
 
